@@ -82,3 +82,7 @@ color:#fff;
     margin-left: 10px;
     color: green;
 }
+#trans{
+    text-decoration: line-through;
+    opacity: 0.2;
+}

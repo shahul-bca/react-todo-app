@@ -6,8 +6,9 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
 
   //add function
+  
   const addTodo = () => {
-    setTodos([...todos, { list: todo, id: Date.now() }]);
+    setTodos([...todos, { list: todo, id: Date.now(), status: false }]);
     console.log(todo);
     setTodo("");
   };
@@ -15,6 +16,18 @@ const Todo = () => {
   //delete function
   const onDelete = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  //Task compleate Function
+
+  const onCompleat = (id) => {
+    let compleate = todos.map((list) => {
+      if (list.id === id) {
+        return { ...list, status: !list.status };
+      }
+      return list;
+    });
+    setTodos(compleate);
   };
 
   return (
@@ -36,7 +49,7 @@ const Todo = () => {
         <ul>
           {todos.map((todo, index) => (
             <li key={index}>
-              {todo.list}
+              <span id={todo.status ? "trans" : ""}> {todo.list}</span>
               <i
                 className="fa fa-trash"
                 aria-hidden="true"
@@ -44,7 +57,10 @@ const Todo = () => {
               >
                 <button>EDIT</button>
               </i>
-              <IoCheckmarkDoneCircle id="don" />
+              <IoCheckmarkDoneCircle
+                id="don"
+                onClick={() => onCompleat(todo.id)}
+              />
             </li>
           ))}
         </ul>
