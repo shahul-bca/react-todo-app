@@ -64,25 +64,28 @@ ul li{
     
 }
 ul li i{
+    font-size: 15px;
     color: red;
     text-align: right;
     flex: 1;
 }
  
-ul li i button{
-margin-left: 10px;
-padding: 2px;
-border-radius: 5px;
-border: none;
-background-color: orange;
-color:#fff;
-}
+
 #don{
-    font-size: 20px;
+    font-size: 15px;
     margin-left: 10px;
     color: green;
 }
 #trans{
     text-decoration: line-through;
     opacity: 0.2;
+}
+#edit{
+    font-size:15px;
+    margin-left: 10px;
+    color:orange ;
+}
+p{
+    color: #fff;
+    margin-bottom: 10px;
 }
